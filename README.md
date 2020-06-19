@@ -41,6 +41,32 @@ or without docker compose
 
 You will probably want to save uploads and logs to the host machine, so add these volumes to the run command above `-v $(pwd)/dl:/ADBHoney/dl -v $(pwd)/logs:/ADBHoney/logs`
 
+## Now connect to the honeypot
+
+1) Download the adb executable from here: https://developer.android.com/studio/releases/platform-tools
+2) Extract the package to platform-tools, cd into the directory.
+3) Connect to your honeypot with adb.
+```
+user$: ./adb connect 127.0.0.1:5555
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+connected to 127.0.0.1:5555
+
+user$: ./adb devices
+List of devices attached
+127.0.0.1:5555	device
+
+user$: ./adb shell ls
+acct
+bt_firmware
+bugreports
+cache
+...
+
+user$: ./adb push test.txt /test.txt
+test.txt: 1 file pushed, 0 skipped. 0.0 MB/s (5 bytes in 0.000s)
+```
+
 ## Credits
 Hat tip to [sporsh](https://github.com/sporsh) for his [awesome work](https://github.com/sporsh/twisted-adb/blob/master/adb/protocol.py) on providing the community with some wrappers for ADB messages.
 

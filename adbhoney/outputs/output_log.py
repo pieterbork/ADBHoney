@@ -20,7 +20,7 @@ class Output(object):
         FORMATTER = logging.Formatter(FORMAT)
         logging.basicConfig(format=FORMAT)
         self.log_file = os.path.join(BASE, FILENAME)
-        self.logger = logging.getLogger('ADBHoneypot')
+        self.logger = logging.getLogger('adbhoney')
         self.logger.setLevel(LOG_LEVEL)
 
         if not os.path.exists(BASE):

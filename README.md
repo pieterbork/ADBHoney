@@ -21,9 +21,20 @@ Responses to shell commands can easily be added by editing the `responses.py` fi
 More advanced commands (like native directory listing and having and interactive shell) won't work. The main reason is that I haven't found any kind of malware to take advantage of mechanisms like this. I've also had to reverse engineer the protocol flow by hand, so please also provide a **.pcap** when logging an issue so I can look into it (or VERY exact steps for reproduction). Any improvements will be more than welcome.
 
 # OK OK, how do I get it started?
-Just start the script in python:
+Install with pip
 
-`nohup python3 run.py &`
+```
+user$: pip install adbhoney
+user$: adbhoney
+INFO:config:Loading config from adbhoney.cfg
+INFO:ADBHoneypot:Configuration loaded with ['output_log', 'output_json'] as output plugins
+INFO:ADBHoneypot:Listening on 0.0.0.0:5555.
+```
+
+Or just start the script in python:
+```
+user$: nohup python3 run.py &
+```
 
 Just like that, shouldn't have any more complex dependencies.
 
